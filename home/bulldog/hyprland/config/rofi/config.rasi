@@ -166,3 +166,4 @@ configuration {
       sorting-method:    "name";
   }
 }
+@theme "rounded-green-dark"

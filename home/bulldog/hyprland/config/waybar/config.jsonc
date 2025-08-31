@@ -1,27 +1,130 @@
 {
-    "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["bluetooth","network","tray","wireplumber","battery", "clock"],
-    "sway/window": {
-        "max-length": 50
+  "layer": "top",
+  "spacing": 3,
+  "height": 30,
+
+  "margin-top": 5,
+  "margin-right": 2,
+  "margin-bottom": 0,
+  "margin-left": 0,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "mpris"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "cpu_text",
+    "cpu",
+    "memory",
+    "battery",
+    "bluetooth",
+    "network",
+    "wireplumber",
+    "custom/shutdown"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "urgent": " ",
+      "active": " ",
+      "default": " "
     },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+    "cpu": {
+        "format": "  {usage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 70
+        }
     },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+
+    "memory": {
+        "format": "  {percentage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 80
+        }
     },
-    "wireplumber": {
-       "format": "{volume}%",
-       "format-muted": "",
-       "on-click": "helvum",
-       "max-volume": 150,
-       "scroll-step": 0.2
+  "battery": {
+    "format": "  {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
     },
-    "bluetooth": {
-       "format": " {status}",
-       "on-click": "~/.config/waybar/scripts/rofi-bluetooth &"
-}
+    "tooltip": false,
+    "on-double-click": "pkill waybar && waybar"
+  },
+
+  "clock": {
+    "format": "{:%a %d %b  %H:%M}"
+  },
+
+  "wireplumber": {
+    "format": "󰕾  {volume}%",
+    "format-muted": "",
+    "on-click": "helvum",
+    "max-volume": 150,
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "on-click": "~/.config/waybar/scripts/rofi-bluetooth &"
+  },
+
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "󰊗  {ipaddr}/{cidr}",
+    "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+    "format-disconnected": "Disconnected  ",
+  },
+
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+
+  "custom/shutdown": {
+    "on-click": "wlogout",
+    "format": "",
+  },
+
+  "mpris": {
+    "format": "{player_icon}  {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "",
+      "mpv": ""
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "dynamic-order": ["title", "artist"],
+    "dynamic-len": 30
+  }
 }

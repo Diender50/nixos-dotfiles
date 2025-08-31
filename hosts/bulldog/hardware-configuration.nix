@@ -24,6 +24,18 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+# fileSystems."/windows" =
+#   { device = "/dev/disk/by-uuid/ACAECEFEAECEBFD6";
+#     fsType = "ntfs-3g";
+#     options = [ "defaults" "rw" "umask=000" ];
+#   };
+
+#   fileSystems."/home/Samuel/gentoo-home" =
+#    { device = "/dev/disk/by-uuid/f752fc0a-9f78-453a-a6c9-b37ad71cf77e";
+#      fsType = "ext4";
+#      options = [ "defaults" "rw" "umask=000" ];
+#    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/45349c1c-216c-4f1d-ba22-27cc30e7a4ec"; }
     ];

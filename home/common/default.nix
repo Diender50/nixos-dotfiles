@@ -18,5 +18,5 @@
     fastfetch
     fzf
     wget
-  ];
+   ];
 }

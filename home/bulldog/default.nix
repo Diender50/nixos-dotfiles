@@ -12,10 +12,17 @@
   home.packages = with pkgs; [
     firefox
     tree
+    
+    # Communication
+    vesktop
+    pavucontrol
  
     # Édition
     vscodium
     kdePackages.kate 
+
+    # fonts
+    nerd-fonts.fira-mono
   ];
   
   programs.bash = {

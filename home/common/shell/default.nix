@@ -20,10 +20,9 @@
         "git"         # also requires `programs.git.enable = true;`
 #       "thefuck"     # also requires `programs.thefuck.enable = true;` 
       ];
-      theme = "agkozak";
+      theme = "blinks";
     };    
   };
-  xdg.configFile."oh-my-zsh/custom/themes/agkozak.zsh-theme".source = ./themes/agkozak/agkozak-zsh-prompt.plugin.zsh;
 }
 
 
