@@ -1,9 +1,18 @@
 { config, pkgs, username, ... }:
 
-{
+{ 
+  imports = [
+    ./hyprland
+    ./kitty
+  ];
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-
+  
+  home.packages = with pkgs; [
+    firefox
+    tree
+  ];
+  
   programs.bash = {
     enable = true;
     shellAliases = {

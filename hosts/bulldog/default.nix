@@ -4,13 +4,19 @@
   imports =
     [ 
       ./hardware-configuration.nix
+
+      "${nixosModules}/sddm"
+      "${nixosModules}/hyprland"
+      "${nixosModules}/nvidia"
     ];
 
-
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.variables.EDITOR = "nano";
   
   # EFI boot loader.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  
   boot.loader = {
     systemd-boot = {
       enable = true;
@@ -40,28 +46,9 @@
   services.xserver = {
     enable = false;
     xkb.layout = "fr";
-    videoDrivers = [ "nvidia" ];
-  };
-  
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
- # Utiliser Hyprland
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true; 
-    xwayland.enable = true;
   };
   
   # Configuration NVIDIA
-  hardware = {
-    graphics.enable = true;
-    nvidia.modesetting.enable = true;
-    nvidia.open = true;
-  }; 
-  hardware.nvidia.prime = {
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };
   # Pour que les applications electron utilisent wayland et pas X11
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -88,7 +75,7 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.Samuel = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
@@ -106,11 +93,6 @@
     wget
     htop
     fastfetch
-    kitty
-    waybar
-    rofi-wayland
-    networkmanagerapplet
-    blueman
   ];
   nixpkgs.config.allowUnfree = true;
   # Some programs need SUID wrappers, can be configured further or are
