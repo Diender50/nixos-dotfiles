@@ -81,7 +81,10 @@
     packages = with pkgs; [
       tree
     ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
 
   programs.firefox.enable = true;
 

@@ -2,6 +2,7 @@
 
 { 
   imports = [
+    ../common
     ./hyprland
     ./kitty
   ];
@@ -11,6 +12,10 @@
   home.packages = with pkgs; [
     firefox
     tree
+ 
+    # Édition
+    vscodium
+    kdePackages.kate 
   ];
   
   programs.bash = {
@@ -22,3 +27,4 @@
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 }
+
