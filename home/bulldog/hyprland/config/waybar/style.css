@@ -10,7 +10,10 @@ window#waybar {
     font-family: "FiraMono Nerd Font";
     font-size: 16px;
 }
-
+#tray menu {
+  background-color: rgba(0,0,0,0.3);
+  color: #000000;
+}
 #clock,
 #battery,
 #cpu,

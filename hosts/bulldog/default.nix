@@ -9,6 +9,7 @@
       "${nixosModules}/hyprland"
       "${nixosModules}/nvidia"
       "${nixosModules}/steam"
+      "${nixosModules}/qemu"
     ];
 
   
@@ -42,12 +43,6 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
  
   console.keyMap = "fr";
- 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = false;
-    xkb.layout = "fr";
-  };
   
   # Configuration NVIDIA
   # Pour que les applications electron utilisent wayland et pas X11

@@ -12,6 +12,7 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
+      dot = "cd ~/.dotfiles";
     };       
  
     oh-my-zsh = {
@@ -19,6 +20,7 @@
       plugins = [
         "git"         # also requires `programs.git.enable = true;`
 #       "thefuck"     # also requires `programs.thefuck.enable = true;` 
+        "fzf"
       ];
       theme = "blinks";
     };    

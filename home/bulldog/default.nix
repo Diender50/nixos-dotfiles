@@ -12,25 +12,38 @@
   home.packages = with pkgs; [
     firefox
     tree
+    # Musique
+    feishin
     
     # Communication
     vesktop
     pavucontrol
- 
+    thunderbird
+   
     # Édition
     vscodium
     kdePackages.kate 
 
     # fonts
     nerd-fonts.fira-mono
+    
+    # Calc
+    singularity
+  
+    pfetch
   ];
   
-  programs.bash = {
+  programs.zsh = {
     enable = true;
+    initContent = "pfetch";
     shellAliases = {
       btw = "echo i use nixos btw";
     };
+    sessionVariables = {
+      TERMINAL = "kitty";
+    };
   };
+  home.sessionVariables = { TERMINAL = "kitty"; };
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 }

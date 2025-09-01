@@ -5,6 +5,8 @@
     ./shell
   ];
 
+  programs.fzf.enableZshIntegration = true;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # Archives
@@ -18,5 +20,11 @@
     fastfetch
     fzf
     wget
+
+    # Edition
+    onlyoffice-bin
+    
+    # cloud
+    nextcloud-client
    ];
 }

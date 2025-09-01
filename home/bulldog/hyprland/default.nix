@@ -11,12 +11,18 @@
   # Paquets user liés à Hyprland
   home.packages = with pkgs; [
     rofi-wayland
-    networkmanagerapplet
     waybar
-    kdePackages.dolphin
     wlogout
     hyprpaper
-    kdePackages.qt6ct
+    playerctl
+    dunst
+    yazi
+    grim
+    swappy
+    slurp
+    wl-clipboard
+
+    udiskie
   ];
 }
 
