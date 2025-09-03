@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hostname, username, nixosModules, ... }:
+{ config, lib, pkgs, hostname, username, nixosModules, nixosPkgs, ... }:
 
 {
   imports =
@@ -10,8 +10,14 @@
       "${nixosModules}/nvidia"
       "${nixosModules}/steam"
       "${nixosModules}/qemu"
-    ];
-
+      "${nixosModules}/singularity" 
+      "${nixosModules}/docker"
+#      "${nixosModules}/xfce"
+#      "${nixosModules}/kde"
+   ];
+  nixpkgs.overlays = [
+    (import ../../pkgs/overlays/paraview-overlay.nix)
+  ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.variables.EDITOR = "nano";
@@ -84,13 +90,22 @@
 
   programs.firefox.enable = true;
   
-
+  # Garbage collection
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
+    settings.auto-optimise-store = true;
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     git
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
     wget
     htop
     fastfetch

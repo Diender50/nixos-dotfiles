@@ -4,6 +4,7 @@
   services.udisks2.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true; # optionnel mais pratique pour gérer les clés
 
   services.xserver = {
     enable = true;

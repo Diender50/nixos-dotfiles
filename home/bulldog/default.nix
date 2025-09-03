@@ -1,10 +1,13 @@
-{ config, pkgs, username, ... }:
-
+{ config, pkgs, username, nixosPkgs, ... }:
+let
+  feishinPkg = pkgs.callPackage "${nixosPkgs}/feishin.nix" {};
+in
 { 
   imports = [
     ../common
     ./hyprland
     ./kitty
+    ./firefox_theming
   ];
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
@@ -13,7 +16,7 @@
     firefox
     tree
     # Musique
-    feishin
+    feishinPkg
     
     # Communication
     vesktop
@@ -26,11 +29,12 @@
 
     # fonts
     nerd-fonts.fira-mono
-    
-    # Calc
-    singularity
-  
+
     pfetch
+    docker
+    python3Full
+    pipenv
+    paraview
   ];
   
   programs.zsh = {

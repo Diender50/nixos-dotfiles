@@ -7,8 +7,9 @@
   xdg.configFile."wlogout".source = ./config/wlogout;
   xdg.configFile."qt6ct".source = ./config/qt6ct; 
   xdg.configFile."kdeglobals".source = ./config/qt6ct/kdeglobals;   
-
+  xdg.configFile."dunst".source = ./config/dunst;
   # Paquets user liés à Hyprland
+
   home.packages = with pkgs; [
     rofi-wayland
     waybar

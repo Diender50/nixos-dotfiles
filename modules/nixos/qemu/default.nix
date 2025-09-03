@@ -1,5 +1,5 @@
+# MARCHE
 { pkgs, username, ... }:
-
 {
   config = {
     programs.virt-manager.enable = true;
@@ -12,19 +12,16 @@
           swtpm.enable = true;
           ovmf = {
             enable = true;
-            packages = [(pkgs.OVMF.override {
-              secureBoot = true;
-              tpmSupport = true;
-            }).fd];
+            packages = [(pkgs.OVMF.override { secureBoot = true; tpmSupport = true; }).fd];
           };
         };
       };
-
       spiceUSBRedirection.enable = true;
     };
-
-    users.users."${username}" = {
-      extraGroups = [ "libvirtd" ];
-    };
+    users.users."${username}" = { extraGroups = [ "libvirtd" ]; };
+    environment.systemPackages = with pkgs; [
+      virtiofsd
+      libvirt-glib
+    ];
   };
 }
