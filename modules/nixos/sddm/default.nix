@@ -1,6 +1,6 @@
 { config, pkgs, nixosPkgs, ... }: 
 let 
-  sddm_themes = pkgs.callPackage "${nixosPkgs}/sddm-themes.nix" {};
+  sddm_themes = pkgs.callPackage "${nixosPkgs}/nixos/sddm-themes.nix" {};
 in
 {
   environment.systemPackages = with pkgs; 

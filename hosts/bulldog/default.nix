@@ -1,5 +1,8 @@
 { config, lib, pkgs, hostname, username, nixosModules, nixosPkgs, ... }:
 
+#let
+#  paraview-overlay = import "${nixosPkgs}/overlays/paraview.nix";
+#in
 {
   imports =
     [ 
@@ -15,10 +18,9 @@
 #      "${nixosModules}/xfce"
 #      "${nixosModules}/kde"
    ];
-  nixpkgs.overlays = [
-    (import ../../pkgs/overlays/paraview-overlay.nix)
-  ];
   
+#  nixpkgs.overlays = [ paraview-overlay ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.variables.EDITOR = "nano";
   

@@ -1,17 +1,20 @@
-{ config, pkgs, username, nixosPkgs, ... }:
+{ config, pkgs, username, nixosPkgs, codedisaster,... }:
 let
-  feishinPkg = pkgs.callPackage "${nixosPkgs}/feishin.nix" {};
+  feishinPkg = pkgs.callPackage "${nixosPkgs}/nixos/feishin.nix" {};
 in
 { 
+
   imports = [
     ../common
     ./hyprland
     ./kitty
     ./firefox_theming
+    ./paraview
+
   ];
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-  
+
   home.packages = with pkgs; [
     firefox
     tree
@@ -31,10 +34,10 @@ in
     nerd-fonts.fira-mono
 
     pfetch
-    docker
-    python3Full
-    pipenv
+
     paraview
+   
+    codedisaster.packages.x86_64-linux.default
   ];
   
   programs.zsh = {
