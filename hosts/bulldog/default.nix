@@ -3,6 +3,7 @@
 {
   imports =
     [ 
+      # Configurations système
       ./hardware-configuration.nix
       ./boot.nix
       ./networking.nix
@@ -11,6 +12,9 @@
       ./hardware.nix
       ./users.nix
 
+      "${nixosModules}/system/storage.nix"
+
+      # Applications
       "${nixosModules}/desktop/sddm.nix"
       "${nixosModules}/desktop/hyprland.nix"
       "${nixosModules}/games/steam.nix"
@@ -27,15 +31,6 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
  
   console.keyMap = "fr";
-
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 1w";
-    };
-    settings.auto-optimise-store = true;
-  };
 
   environment.systemPackages = with pkgs; [
     git
