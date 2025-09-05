@@ -1,0 +1,32 @@
+{
+  "name": "code-aster-vscode",
+  "displayName": "Code_Aster",
+  "description": "Coloration et snippets pour Code_Aster (.comm)",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": { "vscode": "*" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "code-aster",
+        "aliases": ["Code_Aster"],
+        "extensions": [".comm"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "code-aster",
+        "scopeName": "source.code-aster",
+        "path": "./syntaxes/code-aster.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "code-aster",
+        "path": "./snippets/code-aster.json"
+      }
+    ]
+  }
+}

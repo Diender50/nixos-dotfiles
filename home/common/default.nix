@@ -5,8 +5,6 @@
     ./shell
   ];
 
-  programs.fzf.enableZshIntegration = true;
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # Archives
@@ -14,17 +12,24 @@
     unzip
 
     # Utils
+    tree
     bat
     btop
     curl
     fastfetch
+    pfetch
     fzf
     wget
 
     # Edition
     onlyoffice-bin
+    libreoffice
     
     # cloud
     nextcloud-client
+   
+    # font
+    fira-sans
+    nerd-fonts.fira-mono
    ];
 }

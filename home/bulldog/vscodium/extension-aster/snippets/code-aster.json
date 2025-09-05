@@ -1,0 +1,27 @@
+{
+  "DEFI_FICHIER": {
+    "prefix": "defi_fichier",
+    "body": [
+      "DEFI_FICHIER(",
+      "    OPERATION = 'OUVRIR',",
+      "    UNITE     = ${1:12},",
+      "    NOM_FICH  = '${2:resultats.csv}',",
+      "    TYPE      = 'TEXTE',",
+      "    MODE      = 'ECRIRE',",
+      ");"
+    ],
+    "description": "Ouvrir un fichier CSV"
+  },
+  "IMPR_TABLE": {
+    "prefix": "impr_table",
+    "body": [
+      "IMPR_TABLE(",
+      "    TABLE      = ${1:TAB1},",
+      "    UNITE      = ${2:12},",
+      "    SEPARATEUR = ';',",
+      "    FORMAT     = 'TABLEAU',",
+      ");"
+    ],
+    "description": "Imprimer une table en CSV"
+  }
+}

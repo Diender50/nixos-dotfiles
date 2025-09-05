@@ -1,25 +1,26 @@
 { config, pkgs, ... }:
 
 {
-#  programs.thefuck.enable = true;  # Supprimé de NixOS 
+  programs.fzf.enableZshIntegration = true;
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;    
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    
+
+    initContent = "pfetch";
+
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
       dot = "cd ~/.dotfiles";
-    };       
- 
+    };      
+
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "git"         # also requires `programs.git.enable = true;`
-#       "thefuck"     # also requires `programs.thefuck.enable = true;` 
+        "git"   
         "fzf"
       ];
       theme = "blinks";

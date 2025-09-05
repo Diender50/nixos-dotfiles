@@ -6,4 +6,5 @@
   programs.kitty = {
     enable = true;
   };
+  
 }

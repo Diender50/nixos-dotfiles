@@ -22,8 +22,9 @@
     swappy
     slurp
     wl-clipboard
-
+    pavucontrol
     udiskie
+    qalculate-qt
   ];
 }
 

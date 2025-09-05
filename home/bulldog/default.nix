@@ -1,56 +1,40 @@
-{ config, pkgs, username, nixosPkgs, codedisaster,... }:
-let
-  feishinPkg = pkgs.callPackage "${nixosPkgs}/nixos/feishin.nix" {};
-in
-{ 
+{ config, pkgs, username, inputs,... }:
 
+{ 
   imports = [
     ../common
     ./hyprland
     ./kitty
-    ./firefox_theming
-    ./paraview
-
+    ./vscodium
   ];
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
 
   home.packages = with pkgs; [
-    firefox
-    tree
+    # Navigateur
+    zen
+
     # Musique
-    feishinPkg
-    
+    supersonic-wayland
+   
     # Communication
     vesktop
-    pavucontrol
     thunderbird
    
-    # Édition
-    vscodium
-    kdePackages.kate 
-
-    # fonts
-    nerd-fonts.fira-mono
-
-    pfetch
-
+    # Mécanique
     paraview
-   
-    codedisaster.packages.x86_64-linux.default
+    codedisaster
+    freecad
   ];
   
-  programs.zsh = {
-    enable = true;
-    initContent = "pfetch";
-    shellAliases = {
-      btw = "echo i use nixos btw";
-    };
-    sessionVariables = {
-      TERMINAL = "kitty";
-    };
+  programs.zsh.sessionVariables = {
+    TERMINAL = "kitty";
   };
-  home.sessionVariables = { TERMINAL = "kitty"; };
+
+  home.sessionVariables = { 
+    TERMINAL = "kitty"; 
+  };
+
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 }

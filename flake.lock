@@ -103,6 +103,22 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/cc2f28000298e1269cea6612cd06ec9979dd5d7f.tar.gz"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1757020766,
+        "narHash": "sha256-PLoSjHRa2bUbi1x9HoXgTx2AiuzNXs54c8omhadyvp0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "fe83bbdde2ccdc2cb9573aa846abe8363f79a97a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1756787288,
@@ -123,7 +139,29 @@
       "inputs": {
         "codedisaster": "codedisaster",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-stable": "nixpkgs-stable",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1756913805,
+        "narHash": "sha256-TwDIr0sbowOc1cVU4DF8QlOqHyANIE6cRVxtEITV3Pc=",
+        "owner": "SoumyabrataBanik",
+        "repo": "flake-zen-browser",
+        "rev": "1899e7e49bf9fded367e29e5fb699aa2d689ccfb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SoumyabrataBanik",
+        "repo": "flake-zen-browser",
+        "type": "github"
       }
     }
   },
