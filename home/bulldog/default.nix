@@ -1,4 +1,4 @@
-{ config, pkgs, username, inputs,... }:
+{ config, pkgs, username, inputs, nix-gaming,... }:
 
 { 
   imports = [
@@ -25,6 +25,7 @@
     paraview
     codedisaster
     freecad
+ 
   ];
   
   programs.zsh.sessionVariables = {

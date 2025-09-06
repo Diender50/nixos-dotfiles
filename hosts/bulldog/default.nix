@@ -19,6 +19,8 @@
       "${nixosModules}/desktop/hyprland.nix"
       "${nixosModules}/games/steam.nix"
       "${nixosModules}/games/lutris.nix"
+      "${nixosModules}/games/heroic.nix"
+      "${nixosModules}/games/misc.nix"
    ];
   
 #  nixpkgs.overlays = [ paraview-overlay ];

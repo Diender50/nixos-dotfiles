@@ -1,0 +1,62 @@
+{ inputs, config, pkgs, ... }:
+ {
+  services.dunst = {
+    enable = true;
+    settings = {
+      global = {
+        monitor = 0;
+        follow = "mouse";
+        width= 400;
+        height = 200;
+        indicate_hidden = "yes";
+        shrink = "yes";
+        separator_height = 0;
+        padding = 16;
+        horizontal_padding = 32;
+        frame_width = 2;
+        sort = "no";
+        idle_threshold = 120;
+        line_height = 4;
+        markup = "full";
+        format = "<b>%s</b>\n%b";
+        alignment = "left";
+        show_age_threshold = 60;
+        word_wrap = "yes";
+        ignore_newline = "no";
+        stack_duplicates = false;
+        hide_duplicate_count = "yes";
+        show_indicators = "yes";
+        sticky_history = "yes";
+        history_length = 20;
+        browser = "/usr/bin/firefox -new-tab";
+        always_run_script = true;
+        title = "Dunst";
+        class = "Dunst";
+        corner_radius = 10;
+        font = "Fira Mono Nerd Font 10";
+        max_icon_size=32;
+      };
+
+      urgency_low = {
+        timeout = 4;
+        background = "#141c21";
+        foreground = "#93a1a1";
+        frame_color = "#b4befe";
+      };
+
+      urgency_normal = {
+        timeout = 8;
+        background = "#141c21";
+        foreground = "#93a1a1";
+        frame_color = "#f9e2af";
+      };
+
+      urgency_critical = {
+        timeout = 0;
+        background = "#141c21";
+        foreground = "#93a1a1";
+        frame_color = "#f38ba8";
+      };
+    };
+  };
+ }

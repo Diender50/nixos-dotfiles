@@ -11,6 +11,9 @@
     zen-browser = { url = "github:SoumyabrataBanik/flake-zen-browser"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     codedisaster.url = "github:MatthewCroughan/codedisaster";
+
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
   };
 
   outputs = { 
@@ -52,6 +55,7 @@
             ({ pkgs, ...}: {
               nixpkgs.overlays = import "${self}/overlays/default.nix" inputs;
             })
+
           ];
         };
     in

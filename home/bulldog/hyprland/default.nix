@@ -1,23 +1,18 @@
-{ config, pkgs, ... }:
-{
-  # Ici tu peux lier directement ~/.config/hypr/ depuis ton repo
-  xdg.configFile."hypr".source = ./config/hypr;
-  xdg.configFile."rofi".source = ./config/rofi;
-  xdg.configFile."waybar".source = ./config/waybar;
-  xdg.configFile."wlogout".source = ./config/wlogout;
-  xdg.configFile."qt6ct".source = ./config/qt6ct; 
-  xdg.configFile."kdeglobals".source = ./config/qt6ct/kdeglobals;   
-  xdg.configFile."dunst".source = ./config/dunst;
-  # Paquets user liés à Hyprland
+{ inputs, config, pkgs, lib, ... }:
+with lib; {
+   imports = [
+    ./hypr
+
+    ./hyprpaper.nix
+    ./dunst.nix
+    ./yazi.nix
+    ./rofi
+    ./waybar
+    ./wlogout
+   ];
 
   home.packages = with pkgs; [
-    rofi-wayland
-    waybar
-    wlogout
-    hyprpaper
     playerctl
-    dunst
-    yazi
     grim
     swappy
     slurp
@@ -26,5 +21,12 @@
     udiskie
     qalculate-qt
   ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland = {
+      enable = true;
+    };
+  };
 }
 
