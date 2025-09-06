@@ -17,9 +17,11 @@
       # Applications
       "${nixosModules}/desktop/sddm.nix"
       "${nixosModules}/desktop/hyprland.nix"
+      "${nixosModules}/desktop/wayfire.nix"
       "${nixosModules}/games/steam.nix"
       "${nixosModules}/games/lutris.nix"
-      "${nixosModules}/games/heroic.nix"
+      "${nixosModules}/games/wine.nix"
+#       "${nixosModules}/games/heroic.nix"
       "${nixosModules}/games/misc.nix"
    ];
   

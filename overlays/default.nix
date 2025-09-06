@@ -6,4 +6,5 @@ inputs: [
   })
   
   (import ./paraview.nix)
+  (import ./wayfire.nix)
 ]

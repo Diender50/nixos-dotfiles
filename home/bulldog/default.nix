@@ -6,6 +6,7 @@
     ./hyprland
     ./kitty
     ./vscodium
+    ./wayfire
   ];
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";

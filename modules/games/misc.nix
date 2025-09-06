@@ -1,8 +1,10 @@
 {pkgs, ...}: 
 {
+    hardware.graphics.enable32Bit = true;
+
     programs.gamescope.enable = true;
     programs.gamemode = {
-        enable = true;
+        enable = false;
         enableRenice = true;
         settings = {
             general = {

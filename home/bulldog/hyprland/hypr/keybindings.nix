@@ -42,7 +42,7 @@
 
       "$mainMod, TAB, workspace, previous"
 
-      "$mainMod SHIFT, S, exec, grim -g '$(slurp)' - | tee >(wl-copy) | swappy -f -"
+      "$mainMod SHIFT, S, exec, sh -c \"grim -g \\\"\$(slurp)\\\" - | tee >(wl-copy) | swappy -f -\""
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       "$mainMod SHIFT, ampersand, movetoworkspace, 1"

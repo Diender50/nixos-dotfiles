@@ -20,6 +20,7 @@
     pfetch
     fzf
     wget
+    ncdu
 
     # Edition
     onlyoffice-bin
