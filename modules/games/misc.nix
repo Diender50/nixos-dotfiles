@@ -4,7 +4,7 @@
 
     programs.gamescope.enable = true;
     programs.gamemode = {
-        enable = false;
+        enable = true;
         enableRenice = true;
         settings = {
             general = {
