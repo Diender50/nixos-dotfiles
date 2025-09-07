@@ -1,0 +1,3 @@
+# autotiling
+exec --no-startup-id autotiling
+exec swaync

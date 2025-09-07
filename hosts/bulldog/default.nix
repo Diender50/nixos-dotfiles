@@ -11,18 +11,20 @@
       ./audio.nix
       ./hardware.nix
       ./users.nix
+      ./security.nix
 
       "${nixosModules}/system/storage.nix"
 
       # Applications
-      "${nixosModules}/desktop/sddm.nix"
-      "${nixosModules}/desktop/hyprland.nix"
-      "${nixosModules}/desktop/wayfire.nix"
+      "${nixosModules}/desktop/greetd.nix"
+      "${nixosModules}/desktop/sway.nix"
+#     "${nixosModules}/desktop/hyprland.nix"
+#      "${nixosModules}/desktop/wayfire.nix"
       "${nixosModules}/games/steam.nix"
-      "${nixosModules}/games/lutris.nix"
-      "${nixosModules}/games/wine.nix"
-#       "${nixosModules}/games/heroic.nix"
-      "${nixosModules}/games/misc.nix"
+#      "${nixosModules}/games/lutris.nix"
+#      "${nixosModules}/games/wine.nix"
+       "${nixosModules}/games/heroic.nix"
+#      "${nixosModules}/games/misc.nix"
    ];
   
 #  nixpkgs.overlays = [ paraview-overlay ];

@@ -7,4 +7,5 @@
         kanshi
         wlr-randr
     ];
+    
 }

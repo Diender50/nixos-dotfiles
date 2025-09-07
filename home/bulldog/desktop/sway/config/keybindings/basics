@@ -1,0 +1,18 @@
+# Basics
+bindsym Mod4+c kill
+bindsym $mod+Shift+r reload
+
+# Toggle control center
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
+# apps
+bindsym $mod+r exec $menu
+bindsym $mod+Return exec kitty
+bindsym $mod+z exec zen
+
+# Vim keys
+set $left h
+set $down j
+set $up k
+set $right l
+

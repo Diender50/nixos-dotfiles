@@ -1,7 +1,5 @@
 { inputs, config, pkgs, ... }:
- {
-  home.file.".wallpapers".source = ./wallpapers;
-  
+ {  
   services.hyprpaper = {
     enable = true;
     settings = {

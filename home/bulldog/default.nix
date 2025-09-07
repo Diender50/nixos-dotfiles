@@ -3,11 +3,12 @@
 { 
   imports = [
     ../common
-    ./hyprland
+    ./desktop
     ./kitty
     ./vscodium
-    ./wayfire
+
   ];
+  
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
 

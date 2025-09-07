@@ -24,6 +24,7 @@ window#waybar {
 #pulseaudio,
 #memory,
 #workspaces,
+#custom-notification,
 #custom-shutdown,
 #mpris {
     border: 1px rgba(255, 255, 255, 0.3) solid;
@@ -35,10 +36,13 @@ window#waybar {
 #workspaces {
     margin-left: 7px;
 }
-
 #custom-shutdown {
     margin-right: 7px;
     padding: 5px 15px 5px 10px;
+}
+#custom-notification {
+    margin-right: 7px;
+    padding: 5px 12px 5px 10px;
 }
 
 #clock:hover,
@@ -51,6 +55,7 @@ window#waybar {
 #pulseaudio:hover,
 #memory:hover,
 #workspaces:hover,
+#custom-notification:hover,
 #mpris:hover {
     border: 1px rgba(255, 255, 255, 0.7) solid;
     padding: 1px 15px;

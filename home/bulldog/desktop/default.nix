@@ -1,15 +1,15 @@
 { inputs, config, pkgs, lib, ... }:
 with lib; {
-   imports = [
-    ./hypr
-
-    ./hyprpaper.nix
-    ./dunst.nix
-    ./yazi.nix
+   imports = [    
     ./rofi
     ./waybar
     ./wlogout
-   ];
+#    ./hyprland
+    ./sway
+
+    ./yazi.nix
+    ];
+  home.file.".wallpapers".source = ./wallpapers;
 
   home.packages = with pkgs; [
     playerctl
@@ -22,11 +22,4 @@ with lib; {
     qalculate-qt
   ];
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland = {
-      enable = true;
-    };
-  };
 }
-
