@@ -7,19 +7,16 @@ with lib; {
 #    ./hyprland
     ./sway
 
-    ./yazi.nix
+#    ./yazi.nix
     ];
   home.file.".wallpapers".source = ./wallpapers;
 
   home.packages = with pkgs; [
     playerctl
-    grim
-    swappy
-    slurp
-    wl-clipboard
     pavucontrol
     udiskie
     qalculate-qt
+    kdePackages.dolphin
   ];
 
 }

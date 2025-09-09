@@ -10,9 +10,5 @@ bindsym $mod+r exec $menu
 bindsym $mod+Return exec kitty
 bindsym $mod+z exec zen
 
-# Vim keys
-set $left h
-set $down j
-set $up k
-set $right l
-
+# Screenshot
+bindsym  $mod+Shift+s exec grim -g "$(slurp)" - | tee >(wl-copy) | swappy -f -

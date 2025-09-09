@@ -14,8 +14,9 @@
 
   home.packages = with pkgs; [
     # Navigateur
+    ungoogled-chromium
     zen
-
+    kdePackages.okular
     # Musique
     supersonic-wayland
    
@@ -27,7 +28,8 @@
     paraview
     codedisaster
     freecad
- 
+
+    coreform-cubit
   ];
   
   programs.zsh.sessionVariables = {

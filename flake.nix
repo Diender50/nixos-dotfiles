@@ -13,9 +13,6 @@
     codedisaster.url = "github:MatthewCroughan/codedisaster";
 
     nix-gaming.url = "github:fufexan/nix-gaming";
-
-    swayfx.url = "github:WillPower3309/swayfx";
-
   };
 
   outputs = { 
@@ -25,7 +22,6 @@
     home-manager, 
     codedisaster,
     zen-browser,
-    swayfx,
     ... 
     } @ inputs:
     let

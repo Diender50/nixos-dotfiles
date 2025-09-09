@@ -1,3 +1,4 @@
 include ~/.config/sway/keybindings/basics
 include ~/.config/sway/keybindings/movements
 include ~/.config/sway/keybindings/audio
+

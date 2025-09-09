@@ -6,3 +6,8 @@ set $alt Mod1
 set $term kitty
 set $menu --no-startup-id rofi -show drun -show-icons
 
+# Vim keys
+set $left h
+set $down j
+set $up k
+set $right l

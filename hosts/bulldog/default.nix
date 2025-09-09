@@ -25,10 +25,10 @@
 #      "${nixosModules}/games/wine.nix"
        "${nixosModules}/games/heroic.nix"
 #      "${nixosModules}/games/misc.nix"
+
+        "${nixosModules}/dev/singularity.nix"
    ];
   
-#  nixpkgs.overlays = [ paraview-overlay ];
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.variables.EDITOR = "nano";
  
@@ -45,6 +45,9 @@
     wget
     htop
     fastfetch
+    lshw
+
+    salome-meca-wrapper
   ];
   nixpkgs.config.allowUnfree = true;
 
